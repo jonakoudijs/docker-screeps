@@ -37,9 +37,7 @@ docker run -it --entrypoint="" \
 
 ## Configuration
 
-The configuration of the server can be done in the [`server.cfg`](config/server.cfg)
-file. The settings can be overwritten by copying a custom version to
-`/data/config/server.cfg` or changing the config file and rebuilding the image.
+Currently there is no custom configuration added in the build process to this image.
 
 ## Sources
 
