@@ -1,5 +1,5 @@
 # Set the base image to Ubuntu
-FROM node:16-buster
+FROM ubuntu:18.04
 
 # File Author / Maintainer
 LABEL maintainer="Jona Koudijs"
@@ -12,18 +12,34 @@ ENV HOME /data/screeps
 
 ################## BEGIN INSTALLATION ######################
 
-# Create the application user
+# Update and install prerequisites
+RUN apt update \
+ && apt upgrade -y \
+ && apt install -y --no-install-recommends \
+    apt-transport-https \
+    build-essential \
+    ca-certificates \
+    curl \
+    dirmngr \
+    g++ \
+    gcc \
+    git \
+    tcl \
+    make \
+    lsb-release \
+ && apt clean
+
+# Install NodeJS
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash \
+ && apt update \
+ && apt install -y nodejs \
+ && apt clean
+
+# Create Screeps user
 RUN adduser --disabled-password --gecos "" --home $HOME $USER
 
-# Update and install prerequisites
-RUN apt-get update \
- && apt-get upgrade -y \
- && apt-get install -y --no-install-recommends build-essential curl git tcl \
- && rm -rf /var/lib/apt/lists/*
-
-# Set working directory and user
+# Set working directory
 WORKDIR $HOME
-USER    $USER
 
 # Setup Screeps server
 RUN npm install screeps \
