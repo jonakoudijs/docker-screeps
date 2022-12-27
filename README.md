@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/github/workflow/status/jonakoudijs/docker-screeps/build.svg?logo=github)](https://github.com/jonakoudijs/docker-screeps/actions)
+[![Build Status](https://github.com/jonakoudijs/docker-screeps/actions/workflows/build.yml/badge.svg)](https://github.com/jonakoudijs/docker-screeps/actions)
 [![CodeFactor](https://www.codefactor.io/repository/github/jonakoudijs/docker-screeps/badge)](https://www.codefactor.io/repository/github/jonakoudijs/docker-screeps)
 [![Docker Pulls](https://img.shields.io/docker/pulls/jonakoudijs/screeps.svg)](https://hub.docker.com/r/jonakoudijs/screeps)
 [![Image Size](https://img.shields.io/docker/image-size/jonakoudijs/screeps/latest.svg)](https://hub.docker.com/r/jonakoudijs/screeps)
